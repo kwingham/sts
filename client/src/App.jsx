@@ -1,17 +1,20 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Review from "./pages/Review.jsx";
-import NavBar from "./components/Nav.jsx";
-export default function App() {
-  return (
-    <div>
-      <h2>Sams books</h2>
-      <NavBar />
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import SubmitReview from "./pages/SubmitReview";
+import "./styles/App.css";
 
+const App = () => {
+  return (
+    <div className="container">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/books" element={<BooksPage />} />
+        {/* Home Route */}
+        <Route path="/" element={<LandingPage />} />
+
+        {/* Submit Review Route */}
+        <Route path="/submit-review" element={<SubmitReview />} />
       </Routes>
     </div>
   );
-}
+};
+
+export default App;
